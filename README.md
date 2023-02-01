@@ -228,3 +228,21 @@ Visit [My Blog](http://hackware.lucode.net) for more articles about MagicIndicat
 # More
 
 Have seen here, give a star?（都看到这儿了，何不给个...，哎，别走啊，star还没...）
+
+
+
+# sc 切换 
+FragmentContainerExampleActivitySeachal 的日志。 
+```aidl
+
+2023-02-01 11:33:37.467 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment2: onHiddenChanged:hidden-->true
+2023-02-01 11:33:37.474 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment: onStart: 
+2023-02-01 11:33:37.474 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment: onResume: 
+2023-02-01 11:33:46.757 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment: onHiddenChanged:hidden-->true
+2023-02-01 11:33:46.758 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment2: onHiddenChanged:hidden-->false
+2023-02-01 11:33:53.736 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment2: onHiddenChanged:hidden-->true
+2023-02-01 11:33:53.741 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment3: onStart: 
+2023-02-01 11:33:53.741 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment3: onResume: 
+2023-02-01 11:33:57.563 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment3: onHiddenChanged:hidden-->true
+2023-02-01 11:33:57.563 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment: onHiddenChanged:hidden-->false
+```

@@ -25,13 +25,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 /**
- * @Author zhangxc  注意这里不是用 viewpager 实现的
+ * @Author zhangxc
  * @Description //TODO
- * @Date 11:52 2023/2/1
+ * @Date 11:51 2023/2/1
  *
  * @return * @return null
  **/
-public class FragmentContainerExampleActivity extends AppCompatActivity {
+public class FragmentContainerExampleActivitySeachal extends AppCompatActivity {
     private static final String[] CHANNELS = new String[]{"KITKAT", "NOUGAT", "DONUT"};
     private List<Fragment> mFragments = new ArrayList<Fragment>();
     private FragmentContainerHelper mFragmentContainerHelper = new FragmentContainerHelper();
@@ -39,7 +39,7 @@ public class FragmentContainerExampleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_container_example_layout);
+        setContentView(R.layout.activity_fragment_container_example_layout_viewpager);
 
         initFragments();
         initMagicIndicator1();
@@ -71,13 +71,18 @@ public class FragmentContainerExampleActivity extends AppCompatActivity {
     }
 
     private void initFragments() {
-        for (int i = 0; i < CHANNELS.length; i++) {
-            TestFragment testFragment = new TestFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString(TestFragment.EXTRA_TEXT, CHANNELS[i]);
-            testFragment.setArguments(bundle);
-            mFragments.add(testFragment);
-        }
+        TestFragment testFragment = new TestFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(TestFragment.EXTRA_TEXT, CHANNELS[0]);
+        testFragment.setArguments(bundle);
+
+        mFragments.add(testFragment);
+
+        TestFragment2 testFragment2 = new TestFragment2();
+        mFragments.add(testFragment2);
+
+        TestFragment3 testFragment3 = new TestFragment3();
+        mFragments.add(testFragment3);
     }
 
     private void initMagicIndicator1() {

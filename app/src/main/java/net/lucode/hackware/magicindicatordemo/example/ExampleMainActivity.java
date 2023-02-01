@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import net.lucode.hackware.magicindicatordemo.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExampleMainActivity extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class ExampleMainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, BadgeTabExampleActivity.class));
                 break;
             case R.id.work_with_fragment_container:
-                startActivity(new Intent(this, FragmentContainerExampleActivity.class));
+                startActivity(new Intent(this, FragmentContainerExampleActivitySeachal.class));
                 break;
             case R.id.load_custom_layout:
                 startActivity(new Intent(this, LoadCustomLayoutExampleActivity.class));

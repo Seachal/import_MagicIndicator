@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
  * Created by hackware on 2016/9/13.
  */
 
-public class TestFragment extends LogFragment {
+public class TestFragment2 extends LogFragment {
     public static final String EXTRA_TEXT = "extra_text";
 
     @Nullable

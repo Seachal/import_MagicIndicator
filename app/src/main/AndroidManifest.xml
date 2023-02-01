@@ -35,6 +35,10 @@
             android:label="@string/work_with_fragment_container" />
 
         <activity
+            android:name=".example.FragmentContainerExampleActivitySeachal"
+            android:label="@string/work_with_fragment_container" />
+
+        <activity
             android:name=".example.BadgeTabExampleActivity"
             android:label="@string/tab_with_badge_view" />
 
