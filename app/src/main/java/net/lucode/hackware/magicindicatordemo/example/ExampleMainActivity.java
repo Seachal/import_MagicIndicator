@@ -34,7 +34,7 @@ public class ExampleMainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, BadgeTabExampleActivity.class));
                 break;
             case R.id.work_with_fragment_container:
-                startActivity(new Intent(this, FragmentContainerExampleActivitySeachal.class));
+                startActivity(new Intent(this, FragmentContainerExampleActivity.class));
                 break;
             case R.id.load_custom_layout:
                 startActivity(new Intent(this, LoadCustomLayoutExampleActivity.class));

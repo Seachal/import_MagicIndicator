@@ -246,3 +246,18 @@ FragmentContainerExampleActivitySeachal 的日志。
 2023-02-01 11:33:57.563 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment3: onHiddenChanged:hidden-->true
 2023-02-01 11:33:57.563 29471-29471/net.lucode.hackware.magicindicatordemo D/TestFragment: onHiddenChanged:hidden-->false
 ```
+
+
+------
+
+# tabview 点击切换是怎样响应的   setOnClickListener
+
+```Java
+     simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mViewPager.setCurrentItem(index);
+                        badgePagerTitleView.setBadgeView(null); // cancel badge when click tab
+                    }
+                });
+```

@@ -10,9 +10,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import net.lucode.hackware.magicindicator.FragmentContainerHelper;
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -30,6 +27,9 @@ import net.lucode.hackware.magicindicatordemo.ext.titles.ScaleTransitionPagerTit
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class FixedTabExampleActivity extends AppCompatActivity {
     private static final String[] CHANNELS = new String[]{"KITKAT", "NOUGAT", "DONUT"};
@@ -55,6 +55,10 @@ public class FixedTabExampleActivity extends AppCompatActivity {
     private void initMagicIndicator1() {
         MagicIndicator magicIndicator = (MagicIndicator) findViewById(R.id.magic_indicator1);
         CommonNavigator commonNavigator = new CommonNavigator(this);
+        // setAdjustMode true的时候   tab的宽度会被拉伸
+        commonNavigator.setAdjustMode(true);
+        commonNavigator.setLeftPadding(UIUtil.dip2px(this, 15));
+        commonNavigator.setRightPadding(UIUtil.dip2px(this, 15));
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
             @Override
             public int getCount() {

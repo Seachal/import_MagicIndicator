@@ -7,9 +7,6 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
@@ -30,6 +27,9 @@ import net.lucode.hackware.magicindicatordemo.ext.titles.ScaleTransitionPagerTit
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class ScrollableTabExampleActivity extends AppCompatActivity {
     private static final String[] CHANNELS = new String[]{"CUPCAKE", "DONUT", "ECLAIR", "GINGERBREAD", "HONEYCOMB", "ICE_CREAM_SANDWICH", "JELLY_BEAN", "KITKAT", "LOLLIPOP", "M", "NOUGAT"};
@@ -61,8 +61,10 @@ public class ScrollableTabExampleActivity extends AppCompatActivity {
         MagicIndicator magicIndicator = (MagicIndicator) findViewById(R.id.magic_indicator1);
         magicIndicator.setBackgroundColor(Color.parseColor("#d43d3d"));
         CommonNavigator commonNavigator = new CommonNavigator(this);
+        //  跨多页切换时，中间页是否显示 "掠过" 效果
         commonNavigator.setSkimOver(true);
         int padding = UIUtil.getScreenWidth(this) / 2;
+        // 设置的时整体的padding，  不是每个 tab之间的 padiidng
         commonNavigator.setRightPadding(padding);
         commonNavigator.setLeftPadding(padding);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
@@ -75,6 +77,9 @@ public class ScrollableTabExampleActivity extends AppCompatActivity {
             @Override
             public IPagerTitleView getTitleView(Context context, final int index) {
                 ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
+                // 设置 padding 可以调整每个 tab之间的 padding
+                // 会影响下面指示器的宽吗？
+                clipPagerTitleView.setPadding(150, 0, 150, 0);
                 clipPagerTitleView.setText(mDataList.get(index));
                 clipPagerTitleView.setTextColor(Color.parseColor("#f2c4c4"));
                 clipPagerTitleView.setClipColor(Color.WHITE);
